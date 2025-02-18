@@ -1,0 +1,58 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        "config:recommended",
+        "helpers:pinGitHubActionDigests",
+        ":dependencyDashboard",
+        ":semanticCommitTypeAll(chore)"
+    ],
+    "prHourlyLimit": 0,
+    "prConcurrentLimit": 0,
+    "baseBranches": [
+        "main"
+    ],
+    "enabledManagers": [
+        "github-actions",
+        "pre-commit",
+        "gradle",
+        "gradle-wrapper",
+        "dockerfile"
+    ],
+    "github-actions": {
+        "fileMatch": [
+            "^(workflow-templates|\\.github/workflows)/[^/]+\\.ya?ml$",
+            "(^|/)action\\.ya?ml$"
+        ]
+    },
+    "pre-commit": {
+        "enabled": true,
+        "fileMatch": [
+            "(^|/)\\.pre-commit-config\\.ya?ml$"
+        ]
+    },
+    "gradle": {
+        "fileMatch": [
+            "\\.gradle(\\.kts)?$",
+            "(^|/)gradle\\.properties$",
+            "(^|/)gradle/.+\\.toml$",
+            "(^|/)buildSrc/.+\\.kt$",
+            "\\.versions\\.toml$",
+            "(^|/)versions.props$",
+            "(^|/)versions.lock$"
+        ],
+        "timeout": 600,
+        "versioning": "gradle"
+    },
+    "gradle-wrapper": {
+        "fileMatch": [
+            "(^|/)gradle/wrapper/gradle-wrapper\\.properties$"
+        ],
+        "versioning": "gradle"
+    },
+    "dockerfile": {
+        "fileMatch": [
+            "(^|/|\\.)([Dd]ocker|[Cc]ontainer)file$",
+            "(^|/)([Dd]ocker|[Cc]ontainer)file[^/]*$"
+        ]
+    }
+}

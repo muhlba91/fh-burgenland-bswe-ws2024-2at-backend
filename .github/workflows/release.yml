@@ -1,0 +1,116 @@
+---
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    name: Release
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - uses: step-security/harden-runner@91182cccc01eb5e619899d80e4e971d6181294a7 # v2.10.1
+        with:
+          egress-policy: audit
+
+      - uses: google-github-actions/release-please-action@e4dc86ba9405554aeba3c6bb2d169500e7d3b4ee # v4.1.1
+        id: release
+
+  container:
+    if: needs.release.outputs.release_created
+    runs-on: ubuntu-latest
+    name: Build (and Push) Container Image
+    needs:
+      - release
+    permissions:
+      contents: write
+      packages: write
+      id-token: write
+      attestations: write
+    strategy:
+      max-parallel: 4
+      matrix:
+        java-version: ["23"]
+
+    steps:
+      - uses: step-security/harden-runner@91182cccc01eb5e619899d80e4e971d6181294a7 # v2.10.1
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-java@8df1039502a15bceb9433410b1a100fbe190c53b # v4.5.0
+        with:
+          java-version: "${{ matrix.java-version }}"
+          distribution: "corretto"
+      - uses: gradle/actions/setup-gradle@d156388eb19639ec20ade50009f3d199ce1e2808 # v4.1.0
+
+      - uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf # v3.2.0
+      - uses: docker/setup-buildx-action@c47758b77c9736f4b2ef4073d4d51994fabfe349 # v3.7.1
+
+      - uses: docker/login-action@9780b0c442fbb1117ed29e0efdff1e18412f7567 # v3.3.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - run: ./gradlew bootJar cycloneDxBom
+
+      - uses: docker/build-push-action@4f58ea79222b3b9dc2c8bbdd6debcef730109a75 # v6.9.0
+        id: push
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository }}:latest
+            ghcr.io/${{ github.repository }}:${{ github.sha }}
+            ghcr.io/${{ github.repository }}:${{ needs.release.outputs.tag_name }}
+          build-args: |
+            CI_COMMIT_TIMESTAMP=${{ github.event.repository.updated_at }}
+            CI_COMMIT_SHA=${{ github.sha }}
+            CI_COMMIT_TAG=${{ needs.release.outputs.tag_name }}
+      - uses: actions/attest-build-provenance@1c608d11d69870c2092266b3f9a6f3abbf17002c # v1.4.3
+        with:
+          subject-name: ghcr.io/${{ github.repository }}
+          subject-digest: ${{ steps.push.outputs.digest }}
+          push-to-registry: true
+        continue-on-error: true # TODO: in private repositories we do not have access to the security actions, so we need to continue even if it fails
+      - uses: anchore/scan-action@v6
+        id: anchore
+        with:
+          image: ghcr.io/${{ github.repository }}:${{ github.sha }}
+          fail-build: false
+          severity-cutoff: medium
+          output-format: cyclonedx-json
+        continue-on-error: true # we can skip this as informational only, in a production environment we would want to fail the build
+
+      - run: |
+          gh release upload ${{ needs.release.outputs.tag_name }} docs/openapi.yaml
+          gh release upload ${{ needs.release.outputs.tag_name }} build/reports/sbom.json
+          gh release upload ${{ needs.release.outputs.tag_name }} ${{ steps.anchore.outputs.cyclonedx-json }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/attest-build-provenance@520d128f165991a6c774bcb264f323e3d70747f4 # v2.2.0
+        with:
+          subject-path: |
+            docs/openapi.yaml
+            build/reports/sbom.json
+            ${{ steps.anchore.outputs.cyclonedx-json }}
+        continue-on-error: true # TODO: in private repositories we do not have access to the security actions, so we need to continue even if it fails
