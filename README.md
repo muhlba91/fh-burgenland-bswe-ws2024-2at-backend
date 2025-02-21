@@ -157,7 +157,7 @@ export AVWX_API_KEY="your-avwx-api-key"
 cat <<EOF > weather-app-backend-values.yaml
 ---
 apiKeys:
-  avwx: "Token ${AVWX_API_KEY}$"
+  avwx: "Token ${AVWX_API_KEY}"
 EOF
 
 # install weather-app-backend with helm
@@ -178,11 +178,13 @@ kubectl create secret docker-registry ghcr-credentials \
 Then, you can reference the secret in the Helm values file:
 
 ```yaml
-imagePullSecrets
+imagePullSecrets:
   - name: ghcr-credentials
 ```
 
 > Make sure to replace `your-username` and `your-token` with your GitHub username and a personal access token with the `read:packages` scope.
+
+In [deploy/minikube.sh](./deploy/minikube.sh), you can find an example script to deploy (and access) the service to Minikube.
 
 ---
 
