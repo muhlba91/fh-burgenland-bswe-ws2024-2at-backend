@@ -1,10 +1,8 @@
----
 apiVersion: v2
 name: weather-app-backend
-description: The backend for the weather app for the 2nd attempt of the "Software Management II" course at the Hochschule Burgenland in WS2024.
-
+description: >-
+  The backend for the weather app for the 2nd attempt of the "Software
+  Management II" course at the Hochschule Burgenland in WS2024.
 type: application
-
-version: 1.0.0 #x-release-please-version
-
-appVersion: "1.0.0" #x-release-please-version
+version: 1.1.0
+appVersion: 1.0.0
