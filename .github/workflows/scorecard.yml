@@ -57,3 +57,4 @@ jobs:
       - uses: github/codeql-action/upload-sarif@9e8d0789d4a0fa9ceb6b1738f7e269594bdd67f0 # v3.28.9
         with:
           sarif_file: results.sarif
+        continue-on-error: true # TODO: in private repositories we do not have access to the CodeQL action, so we need to continue even if it fails
