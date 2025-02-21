@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.1.1](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/compare/v1.1.0...v1.1.1) (2025-02-21)
+
+
+### Miscellaneous Chores
+
+* **ci:** fix release-please ([6e68df5](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/6e68df5a74f46ad81332f36a23adcc795e95787f))
+* **deps:** update github/codeql-action action to v3.28.10 ([482785b](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/482785b3730eb3a5e65560d4ba3dcbf2f43519ef))
+* **deps:** update github/codeql-action digest to b56ba49 ([a36eb2a](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/a36eb2a931ec32e52095e9505729ee58ea708288))
+
 ## [1.1.0](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/compare/v1.0.0...v1.1.0) (2025-02-21)
 
 
