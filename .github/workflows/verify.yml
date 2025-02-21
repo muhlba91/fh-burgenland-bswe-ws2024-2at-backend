@@ -154,14 +154,14 @@ jobs:
 
       - run: ./gradlew cycloneDxBom
 
-      - uses: anchore/scan-action@v6
+      - uses: anchore/scan-action@7c05671ae9be166aeb155bad2d7df9121823df32 # v6
         id: anchore
         with:
           sbom: build/reports/sbom.json
           fail-build: true
           severity-cutoff: medium
         continue-on-error: true # we can skip this as informational only, in a production environment we would want to fail the build
-      - uses: github/codeql-action/upload-sarif@v3
+      - uses: github/codeql-action/upload-sarif@9e8d0789d4a0fa9ceb6b1738f7e269594bdd67f0 # v3
         with:
           sarif_file: ${{ steps.anchore.outputs.sarif }}
         continue-on-error: true # TODO: in private repositories we do not have access to the CodeQL action, so we need to continue even if it fails
@@ -211,7 +211,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: jaxxstorm/action-install-gh-release@v1.12.0
+      - uses: jaxxstorm/action-install-gh-release@25d5e2dd555cd74f1fab9ac1e6ea117acde2c0c4 # v1.12.0
         with:
           repo: stoplightio/spectral
           extension-matching: disable
@@ -324,14 +324,14 @@ jobs:
             CI_COMMIT_SHA=${{ github.sha }}
             CI_COMMIT_TAG=latest
 
-      - uses: anchore/scan-action@v6
+      - uses: anchore/scan-action@7c05671ae9be166aeb155bad2d7df9121823df32 # v6
         id: anchore
         with:
           image: ghcr.io/${{ github.repository }}:${{ github.sha }}
           fail-build: true
           severity-cutoff: medium
         continue-on-error: true # we can skip this as informational only, in a production environment we would want to fail the build
-      - uses: github/codeql-action/upload-sarif@v3
+      - uses: github/codeql-action/upload-sarif@9e8d0789d4a0fa9ceb6b1738f7e269594bdd67f0 # v3
         with:
           sarif_file: ${{ steps.anchore.outputs.sarif }}
         continue-on-error: true # TODO: in private repositories we do not have access to the CodeQL action, so we need to continue even if it fails
