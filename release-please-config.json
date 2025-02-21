@@ -9,7 +9,10 @@
             "extra-files": [
                 "build.gradle",
                 "docs/openapi.yaml",
-                "charts/weather-app-backend/Chart.yaml"
+                {
+                    "type": "generic",
+                    "path": "charts/weather-app-backend/Chart.yaml"
+                }
             ]
         }
     },

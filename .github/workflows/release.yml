@@ -91,19 +91,10 @@ jobs:
           subject-digest: ${{ steps.push.outputs.digest }}
           push-to-registry: true
         continue-on-error: true # TODO: in private repositories we do not have access to the security actions, so we need to continue even if it fails
-      - uses: anchore/scan-action@7c05671ae9be166aeb155bad2d7df9121823df32 # v6
-        id: anchore
-        with:
-          image: ghcr.io/${{ github.repository }}:${{ github.sha }}
-          fail-build: false
-          severity-cutoff: medium
-          output-format: cyclonedx-json
-        continue-on-error: true # we can skip this as informational only, in a production environment we would want to fail the build
 
       - run: |
           gh release upload ${{ needs.release.outputs.tag_name }} docs/openapi.yaml
           gh release upload ${{ needs.release.outputs.tag_name }} build/reports/sbom.json
-          gh release upload ${{ needs.release.outputs.tag_name }} ${{ steps.anchore.outputs.cyclonedx-json }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -112,5 +103,4 @@ jobs:
           subject-path: |
             docs/openapi.yaml
             build/reports/sbom.json
-            ${{ steps.anchore.outputs.cyclonedx-json }}
         continue-on-error: true # TODO: in private repositories we do not have access to the security actions, so we need to continue even if it fails
