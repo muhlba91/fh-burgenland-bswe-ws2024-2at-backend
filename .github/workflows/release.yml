@@ -91,7 +91,7 @@ jobs:
           subject-digest: ${{ steps.push.outputs.digest }}
           push-to-registry: true
         continue-on-error: true # TODO: in private repositories we do not have access to the security actions, so we need to continue even if it fails
-      - uses: anchore/scan-action@v6
+      - uses: anchore/scan-action@7c05671ae9be166aeb155bad2d7df9121823df32 # v6
         id: anchore
         with:
           image: ghcr.io/${{ github.repository }}:${{ github.sha }}
