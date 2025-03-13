@@ -104,6 +104,8 @@ jobs:
 
       - run: ./gradlew pmdMain pmdTest
 
+  # attention: pitest takes a long time to run
+  # if this causes issues, consider running it in parallel and remove it from the build job's dependencies
   pitest:
     runs-on: ubuntu-latest
     name: PiTest
@@ -164,7 +166,6 @@ jobs:
       - uses: github/codeql-action/upload-sarif@6bb031afdd8eb862ea3fc1848194185e076637e5 # v3
         with:
           sarif_file: ${{ steps.anchore.outputs.sarif }}
-        continue-on-error: true # TODO: in private repositories we do not have access to the CodeQL action, so we need to continue even if it fails
 
   hadolint:
     runs-on: ubuntu-latest
@@ -357,4 +358,3 @@ jobs:
       - uses: github/codeql-action/upload-sarif@6bb031afdd8eb862ea3fc1848194185e076637e5 # v3
         with:
           sarif_file: ${{ steps.anchore.outputs.sarif }}
-        continue-on-error: true # TODO: in private repositories we do not have access to the CodeQL action, so we need to continue even if it fails

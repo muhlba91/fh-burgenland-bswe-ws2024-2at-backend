@@ -151,7 +151,7 @@ The following example shows an example deployment using the provided [Helm chart
 
 ```shell
 # set the AVWX API key
-export AVWX_API_KEY="your-avwx-api-key"
+export AVWX_API_KEY="<your-avwx-api-key>"
 
 # create the helm values file
 cat <<EOF > weather-app-backend-values.yaml
@@ -171,8 +171,8 @@ If you forked this repository and are using a private container registry, you ne
 ```shell
 kubectl create secret docker-registry ghcr-credentials \
   --docker-server=ghcr.io \
-  --docker-username=your-username \
-  --docker-password=your-token
+  --docker-username=<your-username> \
+  --docker-password=<your-token>
 ```
 
 Then, you can reference the secret in the Helm values file:
@@ -182,7 +182,7 @@ imagePullSecrets:
   - name: ghcr-credentials
 ```
 
-> Make sure to replace `your-username` and `your-token` with your GitHub username and a personal access token with the `read:packages` scope.
+> Make sure to replace `<your-username>` and `<your-token>` with your GitHub username and a personal access token with the `read:packages` scope.
 
 In [deploy/minikube.sh](./deploy/minikube.sh), you can find an example script to deploy (and access) the service to Minikube.
 
@@ -190,5 +190,6 @@ In [deploy/minikube.sh](./deploy/minikube.sh), you can find an example script to
 
 ## Notes
 
-- Unit test generation supported by GitHub Copilot.
+- Unit test generation supported by GitHub Copilot (Anthropic Claude 3.5 Sonnet).
 - Some workflow steps are allowed to fail due to the repository being private and not having access to certain security features.
+- Features have been added, modified, or removed to showcase specific aspects of the implementation and software management.

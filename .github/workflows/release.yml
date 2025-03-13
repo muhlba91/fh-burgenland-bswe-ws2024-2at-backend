@@ -90,7 +90,6 @@ jobs:
           subject-name: ghcr.io/${{ github.repository }}
           subject-digest: ${{ steps.push.outputs.digest }}
           push-to-registry: true
-        continue-on-error: true # TODO: in private repositories we do not have access to the security actions, so we need to continue even if it fails
 
       - run: |
           gh release upload ${{ needs.release.outputs.tag_name }} docs/openapi.yaml
@@ -103,4 +102,3 @@ jobs:
           subject-path: |
             docs/openapi.yaml
             build/reports/sbom.json
-        continue-on-error: true # TODO: in private repositories we do not have access to the security actions, so we need to continue even if it fails
