@@ -1,5 +1,40 @@
 # Changelog
 
+## [1.1.2](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/compare/v1.1.1...v1.1.2) (2025-03-13)
+
+
+### Bug Fixes
+
+* **ci:** allow container sarif file upload to fail ([1617f85](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/1617f8505895bc8e89c4529f6fb0652f6ea2b706))
+* **ci:** allow sarif to fail ([7631546](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/7631546f31702d84ae5365b4af650a4eef66baf1))
+* **ci:** allow sarif uploads ([187f50c](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/187f50ca416a9f687e3d889ffdb59790ea1af74d))
+
+
+### Miscellaneous Chores
+
+* cleanup for public repository ([450076e](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/450076e670a24fc128ffb86072f248c9f08259ea))
+* **deps:** update actions/attest-build-provenance action to v2.2.1 ([7a6d7b4](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/7a6d7b43864b8050953660a95287454a75f9b229))
+* **deps:** update actions/attest-build-provenance action to v2.2.2 ([7587ce1](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/7587ce1a9298666e2e3541dc8b9a3a673c81851a))
+* **deps:** update actions/attest-build-provenance action to v2.2.3 ([371bc44](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/371bc440c38b4ab0455b6e903564adcf338a6908))
+* **deps:** update actions/download-artifact action to v4.1.9 ([c9901b6](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/c9901b617886a01f779522745b82df5a8ec3f035))
+* **deps:** update actions/upload-artifact action to v4.6.1 ([6d691ae](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/6d691ae8b1f3b8089fa0fa9e483351ede32c8974))
+* **deps:** update dependency checkstyle to v10.21.3 ([606bd93](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/606bd939baef133844b5c9686a0bbf2c20f1922e))
+* **deps:** update dependency checkstyle to v10.21.4 ([3316746](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/3316746b9aa1826f793179d06c94387a96f8b774))
+* **deps:** update dependency gradle to v8.13 ([d13ae7f](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/d13ae7f5011acba49e41326c94d649dc7d4b22a2))
+* **deps:** update dependency org.wiremock.integrations:wiremock-spring-boot to v3.8.2 ([0a753a9](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/0a753a9c4b04f42dc45451d9963cdd8440ceed95))
+* **deps:** update dependency org.wiremock.integrations:wiremock-spring-boot to v3.9.0 ([bc0483b](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/bc0483be5848eaa99834219d2d5a3b76aecbf8ae))
+* **deps:** update dependency pmd to v7.11.0 ([e5cf6bb](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/e5cf6bbd9b0c6fc2270684ba233b69dfe4392562))
+* **deps:** update docker/build-push-action action to v6.15.0 ([80de4eb](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/80de4eb47d9a297405d7e42753655c225a1d7ca6))
+* **deps:** update docker/setup-buildx-action action to v3.10.0 ([c7692a5](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/c7692a5f0696cd38dfce7a55284ab416c3ca025a))
+* **deps:** update docker/setup-qemu-action action to v3.5.0 ([975200e](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/975200eb945e348e9e640af81fbc9e5d4b31e5f9))
+* **deps:** update docker/setup-qemu-action action to v3.6.0 ([4e0bb64](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/4e0bb64a1709272f8d879d1452a9ea4eebd51803))
+* **deps:** update github/codeql-action action to v3.28.11 ([ae72f1b](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/ae72f1bbb0b6fb4c1a5ca0575caa7d92c6354e86))
+* **deps:** update github/codeql-action digest to 6bb031a ([b597c78](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/b597c789c2fcc6c3e704e5818716d9b1f03d497f))
+* **deps:** update ossf/scorecard-action action to v2.4.1 ([ba9b70d](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/ba9b70df7096af3af1b218c7aab27e9c155acb1d))
+* **deps:** update plugin org.cyclonedx.bom to v2.2.0 ([daa54de](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/daa54de0d6185e7a562b4aabacb9f6c8942dfacd))
+* **deps:** update pre-commit hook adrienverge/yamllint to v1.36.0 ([3860a60](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/3860a60ed6d693507ac7b6ac7648bf362fb8a662))
+* **deps:** update pre-commit hook gruntwork-io/pre-commit to v0.1.26 ([6c3c7c8](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/6c3c7c81b30385930005d667a40969e33ab01ade))
+
 ## [1.1.1](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/compare/v1.1.0...v1.1.1) (2025-02-21)
 
 
