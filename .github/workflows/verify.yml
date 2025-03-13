@@ -134,6 +134,9 @@ jobs:
   cyclonedx:
     runs-on: ubuntu-latest
     name: SBOM
+    permissions:
+      contents: read
+      security-events: write
     strategy:
       max-parallel: 4
       matrix:
@@ -311,6 +314,7 @@ jobs:
       id-token: write
       contents: read
       packages: read
+      security-events: write
 
     steps:
       - uses: step-security/harden-runner@4d991eb9b905ef189e4c376166672c3f2f230481 # v2.11.0
