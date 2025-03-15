@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.3](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/compare/v1.1.2...v1.1.3) (2025-03-15)
+
+
+### Miscellaneous Chores
+
+* **deps:** update docker/login-action action to v3.4.0 ([931c6c5](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/931c6c5624e795feb6c6b722250c00adde32b1e9))
+* **deps:** update pre-commit hook adrienverge/yamllint to v1.36.1 ([7fbe0ca](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/7fbe0ca71d4d4f1b765eb8e668113f4b247b0605))
+
 ## [1.1.2](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/compare/v1.1.1...v1.1.2) (2025-03-13)
 
 
