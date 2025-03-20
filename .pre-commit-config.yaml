@@ -36,7 +36,7 @@ repos:
       - id: yamllint
         args: [--strict, -c=.yamllint]
   - repo: https://github.com/gruntwork-io/pre-commit
-    rev: v0.1.26
+    rev: v0.1.28
     hooks:
       - id: helmlint
   - repo: https://github.com/hadolint/hadolint.git
