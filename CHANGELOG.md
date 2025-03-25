@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.1.3](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/compare/v1.1.2...v1.1.3) (2025-03-25)
+
+
+### Miscellaneous Chores
+
+* **deps:** update actions/download-artifact action to v4.2.0 ([a5f5c17](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/a5f5c1778eb8f141b1334f76f586fe743e6d6254))
+* **deps:** update actions/download-artifact action to v4.2.1 ([b474378](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/b47437877e8f57f746fc042a052ac5dcef0f09f8))
+* **deps:** update actions/upload-artifact action to v4.6.2 ([bc6e845](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/bc6e84500bc8d95cfe18c4081b661076e4f223d2))
+* **deps:** update dependency org.springdoc:springdoc-openapi-starter-webmvc-ui to v2.8.6 ([d433000](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/d4330004bf59ee6d97c99d56a08a2f2732302eaa))
+* **deps:** update dependency org.springframework.cloud:spring-cloud-dependencies to v2024.0.1 ([d5fd1aa](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/d5fd1aa088cfad5b74aee156bf2d91656e98d265))
+* **deps:** update docker/login-action action to v3.4.0 ([931c6c5](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/931c6c5624e795feb6c6b722250c00adde32b1e9))
+* **deps:** update github/codeql-action action to v3.28.12 ([ec8d16c](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/ec8d16c10695237ae49144c2f52bc54f35b80742))
+* **deps:** update github/codeql-action action to v3.28.13 ([bc0ba64](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/bc0ba64f1851f9a09d4bc4ce175000b3a8eb8959))
+* **deps:** update github/codeql-action digest to 1b549b9 ([249f00f](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/249f00ffbde2977824ec4a95749807de01c19b21))
+* **deps:** update github/codeql-action digest to 5f8171a ([8cd1edb](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/8cd1edb3bab3ed348afb7ba57e801b8e8ed27939))
+* **deps:** update gradle/actions action to v4.3.1 ([c9f595a](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/c9f595ab36e1c0890784b730c6f24ce5cfc9a4f9))
+* **deps:** update jaxxstorm/action-install-gh-release action to v2 ([50e5da1](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/50e5da1e36d52dafb16a954d91127d15c6bd11b7))
+* **deps:** update plugin org.springframework.boot to v3.4.4 ([2c02234](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/2c0223452a1c0e6b624fed73beda0983e9b3f74f))
+* **deps:** update pre-commit hook adrienverge/yamllint to v1.36.1 ([7fbe0ca](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/7fbe0ca71d4d4f1b765eb8e668113f4b247b0605))
+* **deps:** update pre-commit hook adrienverge/yamllint to v1.36.2 ([f4dabfc](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/f4dabfca0c39008902075ca25ef4bb53c4cc4ef7))
+* **deps:** update pre-commit hook adrienverge/yamllint to v1.37.0 ([bd714d2](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/bd714d2ce08c444a9c653fafe635d07264e3616c))
+* **deps:** update pre-commit hook gitleaks/gitleaks to v8.24.2 ([8d240cf](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/8d240cf35c89a2b6563db6c9912db2e90de53247))
+* **deps:** update pre-commit hook gruntwork-io/pre-commit to v0.1.28 ([4ae0e71](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/commit/4ae0e713d0a9eb17cb1af8cdadb7a67406a7cf73))
+
 ## [1.1.2](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/compare/v1.1.1...v1.1.2) (2025-03-13)
 
 
