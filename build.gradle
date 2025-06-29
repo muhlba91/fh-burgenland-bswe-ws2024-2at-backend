@@ -80,7 +80,7 @@ tasks.named('test') {
 
 checkstyle {
   configFile = file("config/checkstyle/checkstyle.xml")
-  toolVersion = "10.24.0"
+  toolVersion = "10.26.1"
 }
 
 pmd {
