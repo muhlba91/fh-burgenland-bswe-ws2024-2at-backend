@@ -7,6 +7,7 @@ import io.muehlbachler.bswe.model.location.Coordinates;
 /**
  * A service to handle all forecast related actions.
  */
+@SuppressWarnings("PMD.ImplicitFunctionalInterface")
 public interface ForecastService {
   /**
    * Fetches the forecast for the given coordinates.

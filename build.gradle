@@ -1,6 +1,6 @@
 plugins {
   id 'java'
-  id 'org.springframework.boot' version '3.4.5'
+  id 'org.springframework.boot' version '3.5.3'
   id 'io.spring.dependency-management' version '1.1.7'
   id 'checkstyle'
   id 'pmd'
@@ -18,7 +18,7 @@ version = "${versionMajor}.${versionMinor}.${versionPatch}"
 
 java {
   toolchain {
-    languageVersion = JavaLanguageVersion.of(23)
+    languageVersion = JavaLanguageVersion.of(24)
   }
 }
 
@@ -32,7 +32,7 @@ repositories {
   mavenCentral()
 }
 ext {
-  set('springCloudVersion', "2024.0.1")
+  set('springCloudVersion', "2025.0.0")
 }
 
 dependencies {
@@ -44,7 +44,7 @@ dependencies {
   implementation 'org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j'
   implementation 'org.springframework.boot:spring-boot-configuration-processor'
   implementation 'com.google.code.gson:gson:2.13.1'
-  implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.8'
+  implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.9'
 
   compileOnly 'org.projectlombok:lombok'
 
@@ -80,13 +80,13 @@ tasks.named('test') {
 
 checkstyle {
   configFile = file("config/checkstyle/checkstyle.xml")
-  toolVersion = "10.24.0"
+  toolVersion = "10.26.1"
 }
 
 pmd {
   consoleOutput = true
   ruleSetFiles = files("config/pmd/ruleset.xml")
-  toolVersion = "7.11.0"
+  toolVersion = "7.15.0"
 }
 
 jacocoTestReport {
@@ -136,8 +136,8 @@ jacocoTestCoverageVerification {
 }
 
 pitest {
-  pitestVersion = '1.18.0'
-  junit5PluginVersion = '1.2.1'
+  pitestVersion = '1.19.6'
+  junit5PluginVersion = '1.2.3'
 
   mutators = ['ALL']
   excludedClasses = ['io.muehlbachler.bswe.App']

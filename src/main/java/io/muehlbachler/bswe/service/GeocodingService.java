@@ -5,6 +5,7 @@ import io.muehlbachler.bswe.model.location.Coordinates;
 /**
  * A service to handle all geocoding related actions.
  */
+@SuppressWarnings("PMD.ImplicitFunctionalInterface")
 public interface GeocodingService {
   /**
    * Fetches the coordinates for the given location.
