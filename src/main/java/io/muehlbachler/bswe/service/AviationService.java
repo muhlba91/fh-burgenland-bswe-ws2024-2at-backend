@@ -6,6 +6,7 @@ import io.muehlbachler.bswe.service.model.nearestairport.NearestAirportResultSta
 /**
  * A service to handle all aviation related actions.
  */
+@SuppressWarnings("PMD.ImplicitFunctionalInterface")
 public interface AviationService {
   /**
    * Returns the nearest airport to the given coordinates.

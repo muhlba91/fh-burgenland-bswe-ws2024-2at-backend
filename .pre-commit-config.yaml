@@ -27,7 +27,7 @@ repos:
   #            "next"
   #        ]
   - repo: https://github.com/gitleaks/gitleaks
-    rev: v8.26.0
+    rev: v8.28.0
     hooks:
       - id: gitleaks
   - repo: https://github.com/adrienverge/yamllint.git
@@ -36,7 +36,7 @@ repos:
       - id: yamllint
         args: [--strict, -c=.yamllint]
   - repo: https://github.com/gruntwork-io/pre-commit
-    rev: v0.1.29
+    rev: v0.1.30
     hooks:
       - id: helmlint
   - repo: https://github.com/hadolint/hadolint.git
