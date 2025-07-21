@@ -19,40 +19,40 @@
         "dockerfile"
     ],
     "github-actions": {
-        "fileMatch": [
-            "^(workflow-templates|\\.github/workflows)/[^/]+\\.ya?ml$",
-            "(^|/)action\\.ya?ml$"
+        "managerFilePatterns": [
+            "/^(workflow-templates|\\.github/workflows)/[^/]+\\.ya?ml$/",
+            "/(^|/)action\\.ya?ml$/"
         ]
     },
     "pre-commit": {
         "enabled": true,
-        "fileMatch": [
-            "(^|/)\\.pre-commit-config\\.ya?ml$"
+        "managerFilePatterns": [
+            "/(^|/)\\.pre-commit-config\\.ya?ml$/"
         ]
     },
     "gradle": {
-        "fileMatch": [
-            "\\.gradle(\\.kts)?$",
-            "(^|/)gradle\\.properties$",
-            "(^|/)gradle/.+\\.toml$",
-            "(^|/)buildSrc/.+\\.kt$",
-            "\\.versions\\.toml$",
-            "(^|/)versions.props$",
-            "(^|/)versions.lock$"
+        "managerFilePatterns": [
+            "/\\.gradle(\\.kts)?$/",
+            "/(^|/)gradle\\.properties$/",
+            "/(^|/)gradle/.+\\.toml$/",
+            "/(^|/)buildSrc/.+\\.kt$/",
+            "/\\.versions\\.toml$/",
+            "/(^|/)versions.props$/",
+            "/(^|/)versions.lock$/"
         ],
         "timeout": 600,
         "versioning": "gradle"
     },
     "gradle-wrapper": {
-        "fileMatch": [
-            "(^|/)gradle/wrapper/gradle-wrapper\\.properties$"
+        "managerFilePatterns": [
+            "/(^|/)gradle/wrapper/gradle-wrapper\\.properties$/"
         ],
         "versioning": "gradle"
     },
     "dockerfile": {
-        "fileMatch": [
-            "(^|/|\\.)([Dd]ocker|[Cc]ontainer)file$",
-            "(^|/)([Dd]ocker|[Cc]ontainer)file[^/]*$"
+        "managerFilePatterns": [
+            "/(^|/|\\.)([Dd]ocker|[Cc]ontainer)file$/",
+            "/(^|/)([Dd]ocker|[Cc]ontainer)file[^/]*$/"
         ]
     }
 }
