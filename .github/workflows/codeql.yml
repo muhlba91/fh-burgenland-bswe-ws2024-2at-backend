@@ -39,11 +39,11 @@ jobs:
           distribution: "corretto"
       - uses: gradle/actions/setup-gradle@ac638b010cf58a27ee6c972d7336334ccaf61c96 # v4.4.1
 
-      - uses: github/codeql-action/init@181d5eefc20863364f96762470ba6f862bdef56b # v3.29.0
+      - uses: github/codeql-action/init@181d5eefc20863364f96762470ba6f862bdef56b # v3.29.2
         with:
           languages: ${{ matrix.language }}
-      - uses: github/codeql-action/autobuild@181d5eefc20863364f96762470ba6f862bdef56b # v3.29.0
+      - uses: github/codeql-action/autobuild@181d5eefc20863364f96762470ba6f862bdef56b # v3.29.2
 
-      - uses: github/codeql-action/analyze@181d5eefc20863364f96762470ba6f862bdef56b # v3.29.0
+      - uses: github/codeql-action/analyze@181d5eefc20863364f96762470ba6f862bdef56b # v3.29.2
         with:
           category: "/language:${{matrix.language}}"
