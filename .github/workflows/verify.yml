@@ -165,7 +165,7 @@ jobs:
           sbom: build/reports/sbom.json
           fail-build: false # we can skip this as informational only, in a production environment we would want to fail the build
           severity-cutoff: medium
-      - uses: github/codeql-action/upload-sarif@181d5eefc20863364f96762470ba6f862bdef56b # v3
+      - uses: github/codeql-action/upload-sarif@d6bbdef45e766d081b84a2def353b0055f728d3e # v3
         with:
           sarif_file: ${{ steps.anchore.outputs.sarif }}
         continue-on-error: true # the anchore/scan-action sometimes generates an invalid sarif file here; hence, we continue on error
@@ -358,7 +358,7 @@ jobs:
           image: ghcr.io/${{ github.repository }}:${{ github.sha }}
           fail-build: false # we can skip this as informational only, in a production environment we would want to fail the build
           severity-cutoff: medium
-      - uses: github/codeql-action/upload-sarif@181d5eefc20863364f96762470ba6f862bdef56b # v3
+      - uses: github/codeql-action/upload-sarif@d6bbdef45e766d081b84a2def353b0055f728d3e # v3
         with:
           sarif_file: ${{ steps.anchore.outputs.sarif }}
         continue-on-error: true # the anchore/scan-action sometimes generates an empty sarif file here; hence, we continue on error
