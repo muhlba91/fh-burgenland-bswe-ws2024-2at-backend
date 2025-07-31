@@ -167,3 +167,4 @@ local.env
 gcp-key.json
 .vscode/
 .idea/
+bin/
