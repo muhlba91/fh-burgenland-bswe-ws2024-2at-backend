@@ -50,7 +50,7 @@ jobs:
         with:
           java-version: "${{ matrix.java-version }}"
           distribution: "corretto"
-      - uses: gradle/actions/setup-gradle@ac638b010cf58a27ee6c972d7336334ccaf61c96 # v4.4.1
+      - uses: gradle/actions/setup-gradle@017a9effdb900e5b5b2fddfb590a105619dca3c3 # v4.4.2
 
       - run: ./gradlew test jacocoTestReport jacocoTestCoverageVerification
 
@@ -75,7 +75,7 @@ jobs:
         with:
           java-version: "${{ matrix.java-version }}"
           distribution: "corretto"
-      - uses: gradle/actions/setup-gradle@ac638b010cf58a27ee6c972d7336334ccaf61c96 # v4.4.1
+      - uses: gradle/actions/setup-gradle@017a9effdb900e5b5b2fddfb590a105619dca3c3 # v4.4.2
 
       - run: ./gradlew checkstyleMain checkstyleTest
 
@@ -100,7 +100,7 @@ jobs:
         with:
           java-version: "${{ matrix.java-version }}"
           distribution: "corretto"
-      - uses: gradle/actions/setup-gradle@ac638b010cf58a27ee6c972d7336334ccaf61c96 # v4.4.1
+      - uses: gradle/actions/setup-gradle@017a9effdb900e5b5b2fddfb590a105619dca3c3 # v4.4.2
 
       - run: ./gradlew pmdMain pmdTest
 
@@ -127,7 +127,7 @@ jobs:
         with:
           java-version: "${{ matrix.java-version }}"
           distribution: "corretto"
-      - uses: gradle/actions/setup-gradle@ac638b010cf58a27ee6c972d7336334ccaf61c96 # v4.4.1
+      - uses: gradle/actions/setup-gradle@017a9effdb900e5b5b2fddfb590a105619dca3c3 # v4.4.2
 
       - run: ./gradlew pitest
 
@@ -155,11 +155,11 @@ jobs:
         with:
           java-version: "${{ matrix.java-version }}"
           distribution: "corretto"
-      - uses: gradle/actions/setup-gradle@ac638b010cf58a27ee6c972d7336334ccaf61c96 # v4.4.1
+      - uses: gradle/actions/setup-gradle@017a9effdb900e5b5b2fddfb590a105619dca3c3 # v4.4.2
 
       - run: ./gradlew cycloneDxBom
 
-      - uses: anchore/scan-action@16910ac423301c6d30554b83a7f71ac6ff4a51f3 # v6
+      - uses: anchore/scan-action@1638637db639e0ade3258b51db49a9a137574c3e # v6
         id: anchore
         with:
           sbom: build/reports/sbom.json
@@ -294,7 +294,7 @@ jobs:
         with:
           java-version: "${{ matrix.java-version }}"
           distribution: "corretto"
-      - uses: gradle/actions/setup-gradle@ac638b010cf58a27ee6c972d7336334ccaf61c96 # v4.4.1
+      - uses: gradle/actions/setup-gradle@017a9effdb900e5b5b2fddfb590a105619dca3c3 # v4.4.2
 
       - run: ./gradlew bootJar
 
@@ -333,7 +333,7 @@ jobs:
           name: spring-boot-jar
           path: build/libs/
 
-      - uses: docker/login-action@74a5d142397b4f367a81961eba4e8cd7edddf772 # v3.4.0
+      - uses: docker/login-action@184bdaa0721073962dff0199f1fb9940f07167d1 # v3.5.0
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
@@ -352,7 +352,7 @@ jobs:
             CI_COMMIT_SHA=${{ github.sha }}
             CI_COMMIT_TAG=latest
 
-      - uses: anchore/scan-action@16910ac423301c6d30554b83a7f71ac6ff4a51f3 # v6
+      - uses: anchore/scan-action@1638637db639e0ade3258b51db49a9a137574c3e # v6
         id: anchore
         with:
           image: ghcr.io/${{ github.repository }}:${{ github.sha }}
