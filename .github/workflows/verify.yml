@@ -50,7 +50,7 @@ jobs:
         with:
           java-version: "${{ matrix.java-version }}"
           distribution: "corretto"
-      - uses: gradle/actions/setup-gradle@ed408507eac070d1f99cc633dbcf757c94c7933a # v4.4.3
+      - uses: gradle/actions/setup-gradle@748248ddd2a24f49513d8f472f81c3a07d4d50e1 # v4.4.4
 
       - run: ./gradlew test jacocoTestReport jacocoTestCoverageVerification
 
@@ -75,7 +75,7 @@ jobs:
         with:
           java-version: "${{ matrix.java-version }}"
           distribution: "corretto"
-      - uses: gradle/actions/setup-gradle@ed408507eac070d1f99cc633dbcf757c94c7933a # v4.4.3
+      - uses: gradle/actions/setup-gradle@748248ddd2a24f49513d8f472f81c3a07d4d50e1 # v4.4.4
 
       - run: ./gradlew checkstyleMain checkstyleTest
 
@@ -100,7 +100,7 @@ jobs:
         with:
           java-version: "${{ matrix.java-version }}"
           distribution: "corretto"
-      - uses: gradle/actions/setup-gradle@ed408507eac070d1f99cc633dbcf757c94c7933a # v4.4.3
+      - uses: gradle/actions/setup-gradle@748248ddd2a24f49513d8f472f81c3a07d4d50e1 # v4.4.4
 
       - run: ./gradlew pmdMain pmdTest
 
@@ -127,7 +127,7 @@ jobs:
         with:
           java-version: "${{ matrix.java-version }}"
           distribution: "corretto"
-      - uses: gradle/actions/setup-gradle@ed408507eac070d1f99cc633dbcf757c94c7933a # v4.4.3
+      - uses: gradle/actions/setup-gradle@748248ddd2a24f49513d8f472f81c3a07d4d50e1 # v4.4.4
 
       - run: ./gradlew pitest
 
@@ -155,7 +155,7 @@ jobs:
         with:
           java-version: "${{ matrix.java-version }}"
           distribution: "corretto"
-      - uses: gradle/actions/setup-gradle@ed408507eac070d1f99cc633dbcf757c94c7933a # v4.4.3
+      - uses: gradle/actions/setup-gradle@748248ddd2a24f49513d8f472f81c3a07d4d50e1 # v4.4.4
 
       - run: ./gradlew cycloneDxBom
 
@@ -294,7 +294,7 @@ jobs:
         with:
           java-version: "${{ matrix.java-version }}"
           distribution: "corretto"
-      - uses: gradle/actions/setup-gradle@ed408507eac070d1f99cc633dbcf757c94c7933a # v4.4.3
+      - uses: gradle/actions/setup-gradle@748248ddd2a24f49513d8f472f81c3a07d4d50e1 # v4.4.4
 
       - run: ./gradlew bootJar
 
