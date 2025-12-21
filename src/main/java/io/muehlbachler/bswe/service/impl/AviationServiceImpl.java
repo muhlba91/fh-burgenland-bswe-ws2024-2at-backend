@@ -17,7 +17,6 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
@@ -45,7 +44,7 @@ public class AviationServiceImpl implements AviationService {
     LOG.info("fetching nearest airport for coordinates {}", coordinates);
 
     try {
-      final MultiValueMap<String, String> headers = new HttpHeaders();
+      final HttpHeaders headers = new HttpHeaders();
       headers.add(apiConfiguration.getNearestAirport().getAuthorization().getHeader(),
           apiConfiguration.getNearestAirport().getAuthorization().getValue());
       final HttpEntity<String> request = new HttpEntity<>(headers);

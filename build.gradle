@@ -1,12 +1,12 @@
 plugins {
   id 'java'
-  id 'org.springframework.boot' version '3.5.9'
+  id 'org.springframework.boot' version '4.0.1'
   id 'io.spring.dependency-management' version '1.1.7'
   id 'checkstyle'
   id 'pmd'
   id 'jacoco'
   id 'info.solidsoft.pitest' version '1.19.0-rc.2'
-  id 'org.cyclonedx.bom' version '2.4.1'
+  id 'org.cyclonedx.bom' version '3.1.0'
 }
 
 def versionMajor = 1 //x-release-please-major
@@ -18,7 +18,7 @@ version = "${versionMajor}.${versionMinor}.${versionPatch}"
 
 java {
   toolchain {
-    languageVersion = JavaLanguageVersion.of(24)
+    languageVersion = JavaLanguageVersion.of(25)
   }
 }
 
@@ -32,7 +32,7 @@ repositories {
   mavenCentral()
 }
 ext {
-  set('springCloudVersion', "2025.0.0")
+  set('springCloudVersion', "2025.1.0")
 }
 
 dependencies {
@@ -40,11 +40,12 @@ dependencies {
   implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
   implementation 'org.springframework.boot:spring-boot-starter-web'
   implementation 'org.springframework.boot:spring-boot-starter-cache'
+  implementation 'org.springframework.boot:spring-boot-starter-flyway'
   implementation 'org.flywaydb:flyway-core'
   implementation 'org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j'
   implementation 'org.springframework.boot:spring-boot-configuration-processor'
   implementation 'com.google.code.gson:gson:2.13.2'
-  implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.14'
+  implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:3.0.0'
 
   compileOnly 'org.projectlombok:lombok'
 
@@ -56,6 +57,9 @@ dependencies {
   annotationProcessor 'org.projectlombok:lombok'
 
   testImplementation 'org.springframework.boot:spring-boot-starter-test'
+  testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
+  testImplementation 'org.springframework.boot:spring-boot-resttestclient'
+  testImplementation 'org.springframework.boot:spring-boot-restclient'
   testImplementation 'org.wiremock.integrations:wiremock-spring-boot:4.0.8'
 
   testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
@@ -146,12 +150,9 @@ pitest {
 }
 
 cyclonedxBom {
-    includeConfigs = ["runtimeClasspath"]
-    skipConfigs = ["compileClasspath", "testCompileClasspath"]
     projectType = "application"
-    schemaVersion = "1.6"
-    destination = file("build/reports")
-    outputName = "sbom"
-    outputFormat = "json"
+    schemaVersion = "VERSION_16"
+    jsonOutput = file("build/reports/sbom.json")
+    xmlOutput = file("build/reports/sbom.xml")
     includeBuildSystem = true
 }
