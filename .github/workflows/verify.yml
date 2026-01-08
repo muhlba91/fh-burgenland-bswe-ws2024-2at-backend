@@ -159,7 +159,7 @@ jobs:
 
       - run: ./gradlew cycloneDxBom
 
-      - uses: anchore/scan-action@3c9a191a0fbab285ca6b8530b5de5a642cba332f # v7
+      - uses: anchore/scan-action@62b74fb7bb810d2c45b1865f47a77655621862a5 # v7
         id: anchore
         with:
           sbom: build/reports/sbom.json
@@ -353,7 +353,7 @@ jobs:
             CI_COMMIT_SHA=${{ github.sha }}
             CI_COMMIT_TAG=latest
 
-      - uses: anchore/scan-action@3c9a191a0fbab285ca6b8530b5de5a642cba332f # v7
+      - uses: anchore/scan-action@62b74fb7bb810d2c45b1865f47a77655621862a5 # v7
         id: anchore
         with:
           path: container
