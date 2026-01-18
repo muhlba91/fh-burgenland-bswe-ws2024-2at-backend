@@ -60,7 +60,7 @@ dependencies {
   testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
   testImplementation 'org.springframework.boot:spring-boot-resttestclient'
   testImplementation 'org.springframework.boot:spring-boot-restclient'
-  testImplementation 'org.wiremock.integrations:wiremock-spring-boot:4.0.8'
+  testImplementation 'org.wiremock.integrations:wiremock-spring-boot:4.0.9'
 
   testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
