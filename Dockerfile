@@ -1,4 +1,4 @@
-FROM amazoncorretto:25-alpine-jdk@sha256:e3818f93bee840c1593492ba5335ceb214ffe4a37a8275e49d23aab6f66b9f6a
+FROM amazoncorretto:25-alpine-jdk@sha256:241d36b913a364566890afd6f7945c2be23fb3f05968c920f5dccafac9c2bca2
 
 ARG CI_COMMIT_TIMESTAMP
 ARG CI_COMMIT_SHA
