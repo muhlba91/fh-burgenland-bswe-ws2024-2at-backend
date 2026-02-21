@@ -6,7 +6,7 @@ plugins {
   id 'pmd'
   id 'jacoco'
   id 'info.solidsoft.pitest' version '1.19.0-rc.3'
-  id 'org.cyclonedx.bom' version '3.1.0'
+  id 'org.cyclonedx.bom' version '3.2.0'
 }
 
 def versionMajor = 1 //x-release-please-major
