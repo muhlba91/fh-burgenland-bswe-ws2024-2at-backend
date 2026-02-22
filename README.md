@@ -1,9 +1,9 @@
 # Hochschule Burgenland - BSWE - WS2024 - 2nd Attempt - Weather App - Backend - Reference
 
-[![](https://img.shields.io/github/license/muhlba91/fh-burgenland-bswe-ws2024-2at-backend?style=for-the-badge)](LICENSE.md)
-[![](https://img.shields.io/github/actions/workflow/status/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/verify.yml?style=for-the-badge)](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/actions/workflows/verify.yml)
-[![](https://api.scorecard.dev/projects/github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/badge?style=for-the-badge)](https://scorecard.dev/viewer/?uri=github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend)
-[![](https://img.shields.io/github/release-date/muhlba91/fh-burgenland-bswe-ws2024-2at-backend?style=for-the-badge)](https://github.com/muhlba91/fh-burgenland-bswe-ws2024-2at-backend/releases)
+[![](https://img.shields.io/github/license/muhlba91/hochschule-burgenland-bswe-ws2024-2at-backend?style=for-the-badge)](LICENSE.md)
+[![](https://img.shields.io/github/actions/workflow/status/muhlba91/hochschule-burgenland-bswe-ws2024-2at-backend/verify.yml?style=for-the-badge)](https://github.com/muhlba91/hochschule-burgenland-bswe-ws2024-2at-backend/actions/workflows/verify.yml)
+[![](https://api.scorecard.dev/projects/github.com/muhlba91/hochschule-burgenland-bswe-ws2024-2at-backend/badge?style=for-the-badge)](https://scorecard.dev/viewer/?uri=github.com/muhlba91/hochschule-burgenland-bswe-ws2024-2at-backend)
+[![](https://img.shields.io/github/release-date/muhlba91/hochschule-burgenland-bswe-ws2024-2at-backend?style=for-the-badge)](https://github.com/muhlba91/hochschule-burgenland-bswe-ws2024-2at-backend/releases)
 
 This is a reference implementation of the weather application's backend for the 2nd attempt of the "Software Management II" course at the Hochschule Burgenland in WS2024.
 It solely acts as a reference, not as a complete implementation, and it is not expected by students to produce a similar implementation.
@@ -114,8 +114,8 @@ To build the Docker image, run the following command:
 
 ```shell
 ./gradlew bootJar
-docker build -t fh-burgenland-bswe-ws2024-2at-backend .
-docker run -p 8080:8080 fh-burgenland-bswe-ws2024-2at-backend
+docker build -t hochschule-burgenland-bswe-ws2024-2at-backend .
+docker run -p 8080:8080 hochschule-burgenland-bswe-ws2024-2at-backend
 ```
 
 ### Commit Message
@@ -145,7 +145,7 @@ It also published the SBOMs of the release assets, the OpenAPI specification, an
 
 ## Kubernetes Deployment
 
-The backend service is provided as an OCI image in [ghcr.io/muhlba91/fh-burgenland-bswe-ws2024-2at-backend](https://ghcr.io/muhlba91/fh-burgenland-bswe-ws2024-2at-backend).
+The backend service is provided as an OCI image in [ghcr.io/muhlba91/hochschule-burgenland-bswe-ws2024-2at-backend](https://ghcr.io/muhlba91/hochschule-burgenland-bswe-ws2024-2at-backend).
 
 The following example shows an example deployment using the provided [Helm chart](./charts/weather-app-backend/).
 
